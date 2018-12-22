@@ -3,7 +3,9 @@
 #
 # This program created by Rich Gannon <rich@richgannon.net>.
 #
-# Version 1.1: 2017-10-31
+# Forked from Version 1.1: 2017-10-31
+#
+# Vesrion m1.0: 2018-12-22
 #
 # Updated copies of this program may be found by visiting:
 # http://richgannon.net/projects/dellfanspeed
@@ -25,7 +27,7 @@ MEGARAID=1
 # and megacli command is in $PATH, this script will use
 # megacli to pill drive temperatures.
 #
-MEGACLI=1
+MEGACLI=O
 
 #
 # Set this to 1 to output additional information to the terminal.
@@ -49,7 +51,7 @@ SLEEP_TIMER=5
 # SLEEP_TIMER_MULTIPLY = 6
 # 5 seconds x 6 = 30 seconds
 #
-SLEEP_TIMER_MULTIPLY=6
+SLEEP_TIMER_MULTIPLY=3
 
 #
 # Set temperature levels and fan levels here.  Fan speeds are in
@@ -78,7 +80,8 @@ HDD_LEVEL5=46
 IPMI_TOOL="ipmitool"
 
 #
-# Approximate RPM values in my R710 Gen II are as follows:
+# Approximate RPM values in my R710 are as follows:
+# 0x00 = 1200
 # 0x09 = 2100
 # 0x10 = 2800
 # 0x13 = 3240
@@ -88,9 +91,18 @@ IPMI_TOOL="ipmitool"
 # auto = controlled by iDRAC firmware (default Dell bahavior)
 #
 
-FAN_LEVEL0=0x09
-FAN_LEVEL1=0x13
-FAN_LEVEL2=0x22
+##Rich default settings
+#FAN_LEVEL0=0x09
+#FAN_LEVEL1=0x13
+#FAN_LEVEL2=0x22
+#FAN_LEVEL3=0x32
+#FAN_LEVEL4=0x38
+#FAN_LEVEL5=auto
+
+##matmutant default settings
+FAN_LEVEL0=0x00
+FAN_LEVEL1=0x09
+FAN_LEVEL2=0x13
 FAN_LEVEL3=0x32
 FAN_LEVEL4=0x38
 FAN_LEVEL5=auto
