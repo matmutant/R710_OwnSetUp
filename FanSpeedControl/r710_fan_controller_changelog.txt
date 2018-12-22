@@ -1,0 +1,20 @@
+Version 1.1
+-2017-10-31
+
+- Fixed smartctl finding disk temp with 'Temperature' vs
+  relying on finding field 194.  This can fix alot of
+  issues if other numbers have 194 in them.
+- Fixed an error where high_drive_temp not initialized
+  to zero if MEGARAID is not set to 1.
+- Fixed MEGACLI and MEGACLI conditions requiring 1 to be
+  true versus just being set.
+- Changed poll_drive_temp() to use MegaCLI regardless of
+  MEGARAID setting, as long as MEGACLI=1.
+- Add a user-configurable option to disable megacli
+  detection (MEGACLI=0|1).
+
+
+Version 1.0
+-2017-10-30
+
+- Initial script published
